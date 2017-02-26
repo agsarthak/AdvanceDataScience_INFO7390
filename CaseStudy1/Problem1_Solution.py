@@ -1,8 +1,3 @@
-'''
-Created on Feb 22, 2017
-
-@author: Aashri
-'''
 ############### PROBLEM 1 PART 1 & 2 ############### 
 #Description:
 
