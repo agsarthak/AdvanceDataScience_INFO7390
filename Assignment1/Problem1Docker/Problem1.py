@@ -1,5 +1,5 @@
 ############### PROBLEM 1 PART 1 & 2 ############### 
-#Description:
+#Description: Refer Report
 
 ############### Import Libraries ###############
 import urllib.request
@@ -78,9 +78,6 @@ AWS_ACCESS_KEY_ID = accessKey
 AWS_SECRET_ACCESS_KEY = secretAccessKey
 
 try:
-    ts = time.time()
-    st = datetime.datetime.fromtimestamp(ts)    
-    bucket_name = AWS_ACCESS_KEY_ID.lower()+str(st).replace(" ", "").replace("-", "").replace(":","").replace(".","")
     conn = boto.connect_s3(AWS_ACCESS_KEY_ID,
             AWS_SECRET_ACCESS_KEY)
 
@@ -226,6 +223,9 @@ elif inputLocation == 'USWest':
 elif inputLocation == 'USWest2':
     loc=boto.s3.connection.Location.USWest2
 try:   
+    ts = time.time()
+    st = datetime.datetime.fromtimestamp(ts)    
+    bucket_name = AWS_ACCESS_KEY_ID.lower()+str(st).replace(" ", "").replace("-", "").replace(":","").replace(".","")
     bucket = conn.create_bucket(bucket_name, location=loc)
     print("bucket created")
     zipfile = 'Problem1.zip'

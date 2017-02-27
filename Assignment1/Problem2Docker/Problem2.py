@@ -281,18 +281,18 @@ except Exception as e:
     exit()
     
 # write csv for summary of combined data.
-try:
-    master_df_summary = master_df.describe()
-    master_df_summary.to_csv('master_df_summary.csv')
-    logging.info('The summary metric of combined csv is generated and exported as csv: master_df_summary.csv .')
-except Exception as e:
-    logging.error(str(e))
-    exit()
+#try:
+#    master_df_summary = master_df.describe()
+#    master_df_summary.to_csv('master_df_summary.csv')
+#    logging.info('The summary metric of combined csv is generated and exported as csv: master_df_summary.csv .')
+#except Exception as e:
+#    logging.error(str(e))
+#   exit()
 
 ############### Zip the csvs and logs ###############
 def zipdir(path, ziph):
     ziph.write(os.path.join('master_csv.csv'))
-    ziph.write(os.path.join('master_df_summary.csv'))
+#    ziph.write(os.path.join('master_df_summary.csv'))
     ziph.write(os.path.join('problem2_log.log'))   
 
 zipf = zipfile.ZipFile('Problem2.zip', 'w', zipfile.ZIP_DEFLATED)
